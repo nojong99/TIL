@@ -109,11 +109,46 @@ git remote remove origin
 git remote add origin https://github.com/계정/리포지토리
 ```
 
+---
+
+code 받아와서 작성 후
+
+git add .
+
+git commit -m '수정명'
+
+git pull origin master
+
+git push origin master
+
+끝 ㅎㅎ 
+
+---
+
+# PR 보내는 방법
+
+
+
+![](C:\Users\nojon\Desktop\TIL\0928\강사님자료\pr보내는방법.PNG)
 
 
 
 
- 
+
+## `git reset --`
+
+`git reset` 명령어에는 아래 세 가지 옵션을 줄 수 있다.
+
+1.`soft`: commit된 파일들을 `staging area`로 돌려놓는다. — ***commit 하기 전 상태\***
+
+2.`mixed(default)`: commit된 파일들을 `working directory`로 돌려놓는다. — ***add 하기 전 상태\***
+
+3.`hard`: commit된 파일들 중 `tracked 파일들을 working directory에서 삭제`한다. (*단, Untracked 파일은 Untracked로 남는다.*)
 
 
 
+### reset vs revert
+
+reset은 히스토리 즉, 있었던 기록들을 삭제해버리고
+
+revert는 삭제했다는 기록을 남기며 사라진다. 
