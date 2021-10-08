@@ -1,0 +1,37 @@
+[JDBC 6단계]
+//1. 드라이버 등록 
+-  Class.forName("org.mariadb.jdbc.Driver")
+
+//2. 연결 
+DriverManager - getConnecion 
+-  Connection connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/testDB?user=root&password=1234");
+
+//3. statement 생성
+CreateStatement 의 리턴타입이 statement 이다. 
+-  Statement stmt = connection.createStatment(); 
+
+//4. SQL 전송 
+-  ResultSet rs = stmt.executeQuery("select * from member");
+
+//5. 결과 받기 (타입별)
+-  String id =  rs.getString("id");
+-  String name =  rs.getString("name");
+-  String addr =  rs.getString("addr");
+
+//6. 자원 종료
+rs.close();
+stmt.close();
+connection.close();
+
+// next란 
+ResultSet에 저장된 SELECT문 실행 결과를 행단위로 1행씩 넘겨서 만약에 다음 행이 있으면
+
+true, 다음 행이 없으면 false를 반환하는 함수
+
+
+
+
+
+
+
+
